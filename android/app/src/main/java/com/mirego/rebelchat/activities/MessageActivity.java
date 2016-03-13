@@ -180,7 +180,7 @@ public class MessageActivity extends BaseActivity {
     void onWriteEdit() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(messageText, InputMethodManager.SHOW_IMPLICIT);
-       // takeAndSendScreenshot();
+        takeAndSendScreenshot();
     }
 
     @OnClick(R.id.btn_small_brush)
