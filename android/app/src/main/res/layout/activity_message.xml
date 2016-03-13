@@ -37,15 +37,36 @@
     </FrameLayout>
 
     <com.mirego.rebelchat.views.ToolButton
-        android:id="@+id/btn_pencil"
+        android:id="@+id/btn_small_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|top"
-        android:layout_marginTop="60dp"
+        android:layout_gravity="left|center"
+        android:layout_marginBottom="120dp"
         android:layout_marginStart="12dp"
         android:padding="8dp"
         android:background="?selectableItemBackgroundBorderless"
-        android:src="@drawable/icn_pencil" />
+        android:src="@drawable/icn_small_brush" />
+
+    <com.mirego.rebelchat.views.ToolButton
+        android:id="@+id/btn_medium_brush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:layout_marginStart="12dp"
+        android:padding="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/icn_medium_brush" />
+
+    <com.mirego.rebelchat.views.ToolButton
+        android:id="@+id/btn_large_brush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="12dp"
+        android:padding="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/icn_large_brush" />
 
     <com.mirego.rebelchat.views.ToolButton
         android:id="@+id/btn_logout"

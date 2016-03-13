@@ -14,6 +14,10 @@ import android.graphics.Paint;
 public class DrawingCanvas extends View {
     private static final double DISTANCE_TOLERANCE = 20;
 
+    public static final int SMALL_BRUSH = 5;
+    public static final int MEDIUM_BRUSH = 25;
+    public static final int LARGE_BRUSH = 50;
+
     private Bitmap bitmap;
     private Canvas canvas;
     private Path path;
@@ -47,7 +51,11 @@ public class DrawingCanvas extends View {
         this.pathPaint.setStyle(Paint.Style.STROKE);
         this.pathPaint.setStrokeJoin(Paint.Join.ROUND);
         this.pathPaint.setStrokeCap(Paint.Cap.ROUND);
-        this.pathPaint.setStrokeWidth(25);
+        this.pathPaint.setStrokeWidth(DrawingCanvas.SMALL_BRUSH);
+    }
+
+    public void SetBrushSize(int size) {
+        this.pathPaint.setStrokeWidth(size);
     }
 
     @Override

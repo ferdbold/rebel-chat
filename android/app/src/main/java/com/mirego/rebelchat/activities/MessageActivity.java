@@ -42,8 +42,6 @@ public class MessageActivity extends BaseActivity {
     private Handler messageHandler;
     private Runnable messageCallback;
 
-    private Boolean pencilActive;
-
     @Bind(R.id.root)
     View root;
 
@@ -141,7 +139,9 @@ public class MessageActivity extends BaseActivity {
         scaleTransition.addTarget(R.id.btn_logout);
         scaleTransition.addTarget(R.id.btn_shuffle);
         scaleTransition.addTarget(R.id.btn_snap);
-        scaleTransition.addTarget(R.id.btn_pencil);
+        scaleTransition.addTarget(R.id.btn_small_brush);
+        scaleTransition.addTarget(R.id.btn_medium_brush);
+        scaleTransition.addTarget(R.id.btn_large_brush);
 
         transitionSet.addTransition(autoTransition);
         transitionSet.addTransition(slideUp);
@@ -172,14 +172,19 @@ public class MessageActivity extends BaseActivity {
         takeAndSendScreenshot();
     }
 
-
     @OnClick(R.id.message_text)
     void onWriteEdit() {
         takeAndSendScreenshot();
     }
 
-    @OnClick(R.id.btn_pencil)
-    void onPencilPressed() { togglePencil(); }
+    @OnClick(R.id.btn_small_brush)
+    void onSmallBrushPressed() { this.drawingCanvas.SetBrushSize(DrawingCanvas.SMALL_BRUSH); }
+
+    @OnClick(R.id.btn_medium_brush)
+    void onMediumBrushPressed() { this.drawingCanvas.SetBrushSize(DrawingCanvas.MEDIUM_BRUSH); }
+
+    @OnClick(R.id.btn_large_brush)
+    void onLargeBrushPressed() { this.drawingCanvas.SetBrushSize(DrawingCanvas.LARGE_BRUSH); }
 
     private void setRandomString() {
         String randomString = RandomString.generate(16);
@@ -190,10 +195,6 @@ public class MessageActivity extends BaseActivity {
         showLoadingIndicator(getString(R.string.message_send_progress));
 
         messageHandler.post(messageCallback);
-    }
-
-    private void togglePencil() {
-        this.pencilActive = !this.pencilActive;
     }
 
     @Override
