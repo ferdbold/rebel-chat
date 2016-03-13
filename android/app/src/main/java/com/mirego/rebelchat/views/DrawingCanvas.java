@@ -58,6 +58,10 @@ public class DrawingCanvas extends View {
         this.pathPaint.setStrokeWidth(size);
     }
 
+    public void SetBrushColor(int color) {
+        this.pathPaint.setColor(color);
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);

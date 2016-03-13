@@ -15,8 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/sample_bg"
-            android:visibility="invisible" />
+            android:src="@drawable/sample_bg" />
 
         <com.mirego.rebelchat.views.DrawingCanvas
             android:id="@+id/drawing_canvas"
@@ -40,8 +39,8 @@
         android:id="@+id/btn_small_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center"
-        android:layout_marginBottom="120dp"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="110dp"
         android:layout_marginStart="12dp"
         android:padding="8dp"
         android:background="?selectableItemBackgroundBorderless"
@@ -51,8 +50,9 @@
         android:id="@+id/btn_medium_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center"
+        android:layout_gravity="left|bottom"
         android:layout_marginStart="12dp"
+        android:layout_marginBottom="60dp"
         android:padding="8dp"
         android:background="?selectableItemBackgroundBorderless"
         android:src="@drawable/icn_medium_brush" />
@@ -61,12 +61,43 @@
         android:id="@+id/btn_large_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center"
-        android:layout_marginTop="120dp"
+        android:layout_gravity="left|bottom"
         android:layout_marginStart="12dp"
         android:padding="8dp"
         android:background="?selectableItemBackgroundBorderless"
         android:src="@drawable/icn_large_brush" />
+
+    <com.mirego.rebelchat.views.ToolButton
+        android:id="@+id/btn_color_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="12dp"
+        android:padding="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/icn_color_red" />
+
+    <com.mirego.rebelchat.views.ToolButton
+        android:id="@+id/btn_color_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="12dp"
+        android:padding="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/icn_color_green" />
+
+    <com.mirego.rebelchat.views.ToolButton
+        android:id="@+id/btn_color_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginEnd="12dp"
+        android:padding="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/icn_color_white" />
 
     <com.mirego.rebelchat.views.ToolButton
         android:id="@+id/btn_logout"

@@ -5,7 +5,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.os.AsyncTask;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -17,7 +17,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -185,6 +184,15 @@ public class MessageActivity extends BaseActivity {
 
     @OnClick(R.id.btn_large_brush)
     void onLargeBrushPressed() { this.drawingCanvas.SetBrushSize(DrawingCanvas.LARGE_BRUSH); }
+
+    @OnClick(R.id.btn_color_red)
+    void onRedColorPressed() { this.drawingCanvas.SetBrushColor(Color.RED); }
+
+    @OnClick(R.id.btn_color_green)
+    void onGreenColorPressed() { this.drawingCanvas.SetBrushColor(Color.GREEN); }
+
+    @OnClick(R.id.btn_color_white)
+    void onWhiteColorPressed() { this.drawingCanvas.SetBrushColor(Color.WHITE); }
 
     private void setRandomString() {
         String randomString = RandomString.generate(16);
