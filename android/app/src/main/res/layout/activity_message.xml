@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center" />
 
-        <TextView
+        <EditText
             android:id="@+id/message_text"
             android:layout_width="match_parent"
             android:layout_height="@dimen/message_text_height"
@@ -32,7 +32,8 @@
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="@dimen/message_font_size"
-            tools:text="LY8uU81OVgJqKZo97" />
+            tools:text="LY8uU81OVgJqKZo97"
+            android:inputType="text|textAutoComplete|textAutoCorrect" />
     </FrameLayout>
 
     <com.mirego.rebelchat.views.ToolButton
