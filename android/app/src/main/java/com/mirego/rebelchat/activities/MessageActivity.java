@@ -27,6 +27,7 @@ import com.mirego.rebelchat.controllers.MessageControllerImpl;
 import com.mirego.rebelchat.transition.ScaleTransition;
 import com.mirego.rebelchat.utilities.Encoding;
 import com.mirego.rebelchat.utilities.RandomString;
+import com.mirego.rebelchat.views.DrawingCanvas;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -41,6 +42,8 @@ public class MessageActivity extends BaseActivity {
     private Handler messageHandler;
     private Runnable messageCallback;
 
+    private Boolean pencilActive;
+
     @Bind(R.id.root)
     View root;
 
@@ -52,6 +55,9 @@ public class MessageActivity extends BaseActivity {
 
     @Bind(R.id.message_text)
     EditText messageText;
+
+    @Bind(R.id.drawing_canvas)
+    DrawingCanvas drawingCanvas;
 
     public static Intent newIntent(Activity fromActivity, String userId) {
         Intent intent = new Intent(fromActivity, MessageActivity.class);
@@ -135,6 +141,7 @@ public class MessageActivity extends BaseActivity {
         scaleTransition.addTarget(R.id.btn_logout);
         scaleTransition.addTarget(R.id.btn_shuffle);
         scaleTransition.addTarget(R.id.btn_snap);
+        scaleTransition.addTarget(R.id.btn_pencil);
 
         transitionSet.addTransition(autoTransition);
         transitionSet.addTransition(slideUp);
@@ -165,12 +172,14 @@ public class MessageActivity extends BaseActivity {
         takeAndSendScreenshot();
     }
 
+
     @OnClick(R.id.message_text)
     void onWriteEdit() {
         takeAndSendScreenshot();
     }
 
-
+    @OnClick(R.id.btn_pencil)
+    void onPencilPressed() { togglePencil(); }
 
     private void setRandomString() {
         String randomString = RandomString.generate(16);
@@ -181,6 +190,10 @@ public class MessageActivity extends BaseActivity {
         showLoadingIndicator(getString(R.string.message_send_progress));
 
         messageHandler.post(messageCallback);
+    }
+
+    private void togglePencil() {
+        this.pencilActive = !this.pencilActive;
     }
 
     @Override
