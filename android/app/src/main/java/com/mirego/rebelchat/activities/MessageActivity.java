@@ -54,7 +54,7 @@ public class MessageActivity extends BaseActivity {
     ImageView messageImage;
 
     @Bind(R.id.message_text)
-    EditText messageText;
+    TextView messageText;
 
     @Bind(R.id.drawing_canvas)
     DrawingCanvas drawingCanvas;
