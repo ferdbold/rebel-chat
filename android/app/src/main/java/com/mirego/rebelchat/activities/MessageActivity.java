@@ -143,6 +143,9 @@ public class MessageActivity extends BaseActivity {
         scaleTransition.addTarget(R.id.btn_small_brush);
         scaleTransition.addTarget(R.id.btn_medium_brush);
         scaleTransition.addTarget(R.id.btn_large_brush);
+        scaleTransition.addTarget(R.id.btn_color_red);
+        scaleTransition.addTarget(R.id.btn_color_white);
+        scaleTransition.addTarget(R.id.btn_color_green);
 
         transitionSet.addTransition(autoTransition);
         transitionSet.addTransition(slideUp);
