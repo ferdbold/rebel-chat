@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,7 +51,7 @@ public class MessageActivity extends BaseActivity {
     ImageView messageImage;
 
     @Bind(R.id.message_text)
-    TextView messageText;
+    EditText messageText;
 
     public static Intent newIntent(Activity fromActivity, String userId) {
         Intent intent = new Intent(fromActivity, MessageActivity.class);
@@ -65,6 +66,7 @@ public class MessageActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         messageHandler = new Handler();
+
 
         messageController = new MessageControllerImpl();
         currentUserId = getIntent().getStringExtra(EXTRA_USER_ID);
@@ -162,6 +164,13 @@ public class MessageActivity extends BaseActivity {
     void onSnapPressed() {
         takeAndSendScreenshot();
     }
+
+    @OnClick(R.id.message_text)
+    void onWriteEdit() {
+        takeAndSendScreenshot();
+    }
+
+
 
     private void setRandomString() {
         String randomString = RandomString.generate(16);
